@@ -1,7 +1,4 @@
 #include "pch.h"
-#include <execution>
-#include "ipp.h"
-#include "ispcrt.h"
 constexpr size_t kSize{400'000'000};
 
 using namespace std;
@@ -59,6 +56,8 @@ TEST_F(AddingAlgorithmTest, IppAdd)
 	EXPECT_EQ(1, 1);
 	EXPECT_TRUE(true);
 }
+
+
 
 
 
