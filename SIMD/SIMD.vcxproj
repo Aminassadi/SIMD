@@ -32,6 +32,14 @@
   <ImportGroup Label="Shared" />
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\ipp\include;C:\Program Files\ISPC\ispc-v1.18.0-windows\include\ispcrt</IncludePath>
+    <LibraryPath>C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\ipp\lib\intel64_win;C:\Program Files\ISPC\ispc-v1.18.0-windows\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\ipp\include;C:\Program Files\ISPC\ispc-v1.18.0-windows\include\ispcrt</IncludePath>
+    <LibraryPath>C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\ipp\lib\intel64_win;C:\Program Files\ISPC\ispc-v1.18.0-windows\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemGroup>
     <ClInclude Include="pch.h" />
   </ItemGroup>
@@ -82,6 +90,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\ipp\lib\intel64_win\*.lib;C:\Program Files\ISPC\ispc-v1.18.0-windows\lib\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -115,6 +124,7 @@
       <SubSystem>Console</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <AdditionalDependencies>C:\Program Files (x86)\IntelSWTools\compilers_and_libraries\windows\ipp\lib\intel64_win\*.lib;C:\Program Files\ISPC\ispc-v1.18.0-windows\lib\*.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
